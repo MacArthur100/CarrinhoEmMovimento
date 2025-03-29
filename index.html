@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        #carro{
+            /*a posição deve ser absoluta para animação ocorrer*/
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img id="carro" src="IMG/download.jfif" alt="isso é um carro">
+    <script>
+        let posicaoDoCarrinho=0;
+        const carro = document.getElementById('carro');
+        //criar uma função recursiva
+        function moverCarro(){
+            if(posicaoDoCarrinho>window.innerWidth){
+                //ele reseta a posição do carrinho
+                posicaoDoCarrinho=-100;
+            }
+            //move o carrinho de 5 em 5 pixels
+            posicaoDoCarrinho=posicaoDoCarrinho+5;
+            carro.style.left=posicaoDoCarrinho+"px";
+        }
+
+        setInterval(moverCarro,30);
+    </script>
+</body>
+</html>
